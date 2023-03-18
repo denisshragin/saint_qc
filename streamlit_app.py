@@ -1,7 +1,11 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import json
 
+with open('https://github.com/denisshragin/saint_qc/blob/main/quebec_regions.geojson') as jsonfile:
+    geojson = json.load(jsonfile)
+    
 # Display title and text
 st.title("Number of a 'Saint' municipalities in Quebec province")
 st.markdown("Here we can see the 1st dataframe created during this project.")
@@ -20,7 +24,7 @@ st.dataframe(dataframe)
 st.markdown("Below is a map showing all the Airbnb listings with a red dot and the location we've chosen with a blue dot.")
 
 # Create the plotly express figure
-fig = px.choropleth_mapbox(df_saint, geojson='https://github.com/denisshragin/saint_qc/blob/main/quebec_regions.geojson',
+fig = px.choropleth_mapbox(df_saint, geojson=geojson,
                            color="Number of a 'Saint' municipalities",
                            locations="Region Administrative ",
                            featureidkey="properties.res_nm_reg",
