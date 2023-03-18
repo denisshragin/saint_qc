@@ -20,7 +20,7 @@ st.dataframe(dataframe)
 st.markdown("Below is a map showing all the Airbnb listings with a red dot and the location we've chosen with a blue dot.")
 
 # Create the plotly express figure
-fig = px.choropleth_mapbox(df_saint, geojson='https://gist.githubusercontent.com/carmoreira/73f4d87b7c42834669dd8f734b1e3a58/raw/0198532fd51f2526a9ec7d301d048fef310dfb00/quebec_regions.geojson',
+fig = px.choropleth_mapbox(df_saint, geojson='https://github.com/denisshragin/saint_qc/blob/main/quebec_regions.geojson',
                            color="Number of a 'Saint' municipalities",
                            locations="Region Administrative ",
                            featureidkey="properties.res_nm_reg",
