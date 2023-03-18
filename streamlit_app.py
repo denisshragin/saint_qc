@@ -3,7 +3,7 @@ import plotly.express as px
 import streamlit as st
 import json
 
-with open('https://github.com/denisshragin/saint_qc/blob/main/quebec_regions.geojson') as jsonfile:
+with open('quebec_regions.geojson') as jsonfile:
     geojson = json.load(jsonfile)
     
 # Display title and text
